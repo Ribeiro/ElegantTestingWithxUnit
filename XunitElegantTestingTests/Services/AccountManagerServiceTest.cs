@@ -17,7 +17,7 @@ namespace XunitElegantTestingTests.Services
         }
 
         [Fact]
-        public void ShouldSuccessfullyTranferAmountFromOriginToDestiationAccount()
+        public void ShouldSuccessfullyTransferAmountBetweenAccounts()
         {
             Account originAccount = AccountFactory.GetValidAccountWithNumberAndBalanceOf(1234, 1000);
             decimal originExpectedBalance = 500;
@@ -32,7 +32,7 @@ namespace XunitElegantTestingTests.Services
         }
 
         [Fact]
-        public void ShouldFailTranferAmountFromOriginToDestiationAccountDueToNotEnoughFundsForDebit()
+        public void ShouldFailTransferAmountBetweenAccountsDueToNotEnoughFundsForDebit()
         {
             Account originAccount = AccountFactory.GetValidAccountWithNoBalance();
             Account destinationAccount = AccountFactory.GetValidAccountWithNoBalance();
