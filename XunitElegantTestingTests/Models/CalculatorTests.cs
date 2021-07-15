@@ -21,7 +21,7 @@ namespace XunitElegantTestingTests.Models
             decimal expected = 12;
             _sut.Add(5);
             _sut.Add(8);
-            expected.Should().Be(_sut.Value);
+            _sut.Value.Should().Be(expected);
         }
 
         [Theory]
@@ -33,7 +33,7 @@ namespace XunitElegantTestingTests.Models
         {
             _sut.Add(firstToAdd);
             _sut.Add(secondToAdd);
-            expected.Should().Be(_sut.Value);
+            _sut.Value.Should().Be(expected);
         }
 
 
@@ -47,7 +47,7 @@ namespace XunitElegantTestingTests.Models
                 _sut.Add(value);
             }
 
-            expected.Should().Be(_sut.Value);
+            _sut.Value.Should().Be(expected);
         }
 
 
@@ -61,7 +61,7 @@ namespace XunitElegantTestingTests.Models
                 _sut.Divide(value);
             }
 
-            expected.Should().Be(_sut.Value);
+            _sut.Value.Should().Be(expected);
         }
 
         public static IEnumerable<object[]> TestData()
