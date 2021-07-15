@@ -8,7 +8,7 @@ namespace XunitElegantTestingTests.Services.Fixtures
     {
         public static Account GetInvalidAccountDueToMissingNumber()
         {
-            return new Account(number: null, balance: 1234);
+            return new Account(number: -1 , balance: 1234);
         }
 
         public static Account GetValidAccountWithNoBalance()
