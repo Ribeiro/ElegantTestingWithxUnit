@@ -6,12 +6,12 @@ namespace XunitElegantTestingTests.Services.Fixtures
 {
     internal static class AccountFactory
     {
-        public static Account GetValidAccountWithNumberAndBalanceOf(int number, decimal amount)
+        public static Account GetAccountWithNumberAndBalanceOf(int number, decimal amount)
         {
             return new Account(number: number, balance: amount);
         }
 
-        public static Account GetValidAccountWithNumber(int number)
+        public static Account GetAccountWithNumber(int number)
         {
             return new Account(number: number);
         }
