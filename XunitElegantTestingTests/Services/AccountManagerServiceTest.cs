@@ -51,7 +51,7 @@ namespace XunitElegantTestingTests.Services
 
             action.Should()
                   .Throw<BaseAppException>()
-                  .WithMessage("Debit account has not enough funds to proceed.");
+                  .WithMessage(string.Format("Debit account {0} has not enough funds to proceed.", relatedAccounts[0].Number));
         }
 
         [Fact]
@@ -66,7 +66,7 @@ namespace XunitElegantTestingTests.Services
 
             action.Should()
                   .Throw<BaseAppException>()
-                  .WithMessage("Account not found.");
+                  .WithMessage(string.Format("Account not found: {0}", relatedAccounts[1].Number));
         }
 
     }

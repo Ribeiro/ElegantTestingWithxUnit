@@ -6,7 +6,7 @@ namespace XUnitElegantTesting.Models
 {
     public sealed class Account
     {
-        private const string NotEnoughFundMessage = "Debit account has not enough funds to proceed.";
+        private const string NotEnoughFundMessage = "Debit account {0} has not enough funds to proceed.";
 
         public int Number { get; private set; }
         public decimal Balance { get; private set; }
@@ -43,7 +43,7 @@ namespace XUnitElegantTesting.Models
         {
             if(amount > Balance)
             {
-                throw new BaseAppException(NotEnoughFundMessage);
+                throw new BaseAppException(string.Format(NotEnoughFundMessage, Number));
             }
             return With(a => a.Balance = a.Balance - amount);
         }
