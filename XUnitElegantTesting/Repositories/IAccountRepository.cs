@@ -1,10 +1,11 @@
-﻿using XUnitElegantTesting.Models;
+﻿using System.Threading.Tasks;
+using XUnitElegantTesting.Models;
 
 
 namespace XUnitElegantTesting.Repositories
 {
     public interface IAccountRepository
     {
-        Account GetBy(int number);
+        Task<Account> GetBy(int number);
     }
 }

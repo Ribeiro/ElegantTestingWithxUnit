@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using XUnitElegantTesting.Exceptions;
 using XUnitElegantTesting.Models;
 using XUnitElegantTesting.Repositories;
@@ -15,10 +16,10 @@ namespace XUnitElegantTesting.Services
             _accountRepository = accountRepository;
         }
 
-        public Tuple<Account, Account> Transfer(decimal amount, Account originAccount, Account destinationAccount)
+        public async Task<Tuple<Account, Account>> Transfer(decimal amount, Account originAccount, Account destinationAccount)
         {
-            Account originAccountFromDb = _accountRepository.GetBy(originAccount.Number);
-            Account destinationAccountFromDb = _accountRepository.GetBy(destinationAccount.Number);
+            Account originAccountFromDb = await _accountRepository.GetBy(originAccount.Number);
+            Account destinationAccountFromDb = await _accountRepository.GetBy(destinationAccount.Number);
 
             AssertExisting(originAccountFromDb, originAccount);
             AssertExisting(destinationAccountFromDb, destinationAccount);
